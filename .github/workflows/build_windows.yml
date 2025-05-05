@@ -23,10 +23,10 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "機器學習分類" image_project/image_gui.py
+          pyinstaller --noconsole --onefile --name "App" image_project/image_gui.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: 機器學習分類-exe
-          path: dist/機器學習分類.exe
+          name: App-exe
+          path: dist/App.exe
