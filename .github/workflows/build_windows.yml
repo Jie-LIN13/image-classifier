@@ -23,10 +23,10 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "App" image_project/image_gui.py
+          pyinstaller --noconsole --onefile --name "Build Windows" image_project/image_gui.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: App-exe
-          path: dist/App.exe
+          name: Build Windows-exe
+          path: dist/Build Windows.exe
