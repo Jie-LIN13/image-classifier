@@ -19,14 +19,15 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install tensorflow opencv-python scikit-learn pillow pyinstaller
+          pip install wheel setuptools
+          pip install tensorflow opencv-python scikit-learn pillow pyinstaller==5.13.0
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "Photo App" image_project/image_gui.py
+          pyinstaller --noconsole --onefile --name "App" --add-data "image_project/model.h5;image_project" image_project/image_gui.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: Photo App-exe
-          path: dist/Photo App.exe
+          name: App-exe
+          path: dist/App.exe
