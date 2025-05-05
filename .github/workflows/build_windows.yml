@@ -24,7 +24,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "App" --add-data "image_project/model.h5;image_project" image_project/image_gui.py
+          pyinstaller --noconsole --onefile --name "App" main.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
