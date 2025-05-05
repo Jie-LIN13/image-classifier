@@ -31,3 +31,4 @@ jobs:
         with:
           name: App-exe
           path: dist/App.exe
+
