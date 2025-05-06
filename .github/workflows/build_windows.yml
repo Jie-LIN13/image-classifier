@@ -29,7 +29,8 @@ jobs:
             --hidden-import=PIL.ImageTk
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: image_gui-exe
           path: dist/image_gui.exe
+
