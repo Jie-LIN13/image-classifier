@@ -24,7 +24,7 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "App" image_gui.py
+          pyinstaller --noconsole --onefile --name "image_gui" image_gui.py
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
