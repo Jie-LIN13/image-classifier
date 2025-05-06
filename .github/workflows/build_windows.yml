@@ -24,11 +24,12 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller --noconsole --onefile --name "image" .github/workflows/image_gui.yml
+          pyinstaller --noconsole --onefile --name "image_gui" image_gui.py ^
+            --hidden-import=tkinter ^
+            --hidden-import=PIL.ImageTk
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: image-exe
-          path: dist/image.exe
-
+          name: image_gui-exe
+          path: dist/image_gui.exe
